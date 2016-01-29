@@ -6,9 +6,8 @@
 # http://stackoverflow.com/questions/1054271/how-to-import-a-python-class-that-is-in-a-directory-above
 import sys
 import os.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
-
 import unittest
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 from list_node import SausageLinkNode
 
 class TestSausageLinkNodeMethods(unittest.TestCase):
@@ -33,6 +32,12 @@ class TestSausageLinkNodeMethods(unittest.TestCase):
     self.assertEqual(n.prev_node, o)
  
 
+  def test_filling_set_correctly(self):
+    n = SausageLinkNode("beef", None, None)
+    self.assertEqual(n.contains_a_specific_filling("beef"), True)
+
+
+
   def test_print_something_simple(self):
     self.assertEqual (True, True)
     print "fuck you!"
@@ -42,11 +47,14 @@ class TestSausageLinkNodeMethods(unittest.TestCase):
 print "Beginning procedure..."
 
 
-
+#following 2 lines also plagarized:
 if __name__ == '__main__':
     unittest.main()
 
 
 #tslnm = TestSausageLinkNodeMethods()
 #tslnm.test_print_something_simple
-print "completed the call..."
+
+
+  #http://stackoverflow.com/questions/6146963/when-is-del-useful-in-python
+  #def test
