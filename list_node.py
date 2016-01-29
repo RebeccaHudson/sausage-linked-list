@@ -7,7 +7,6 @@ class SausageLinkNode:
      self.filling = sausage_filling
      self.prev_node = prev_sausage_node
      self.next_node = next_sausage_node
-     print "this constructor just created a SausageLinkNode"
 
 
   def is_first_node(self):
@@ -25,8 +24,10 @@ class SausageLinkNode:
 
 
   def contains_a_specific_filling(self, filling_to_check_for):
-    filling_to_check_for == self.filling
+    return filling_to_check_for == self.filling
 
+
+   
 
 #there are no "end" keywords to put ends on your blocks, so if you are like
 #me, you will probably want to use comments to show ends of blocks.
